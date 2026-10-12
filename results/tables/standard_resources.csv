@@ -1,0 +1,4 @@
+task,wall_clock_seconds,peak_per_device_vram_gib,generated_tokens,updates,epochs
+task1_dpo,1295.143040604,6.657295227050781,,91,1
+task2_ppo,320.12409193900004,7.4082722663879395,6253,20,
+task3_grpo,404.799277616,6.496824741363525,24299,20,

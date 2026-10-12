@@ -23,10 +23,9 @@ def main():
     ap.add_argument("--adapter", required=True)
     ap.add_argument("--name", default="standard")
     args = ap.parse_args()
-    load_evaluation_bundle(args.config, args.adapter)
-    raise NotImplementedError(
-        "TODO(student): implement the common held-out GRPO evaluation and save the required metrics/examples."
-    )
+    from common.evaluation import evaluate_policy
+    evaluate_policy(args.config, args.adapter, args.name, "task3_grpo")
+
 
 
 if __name__ == "__main__":

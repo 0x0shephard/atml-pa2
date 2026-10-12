@@ -1,0 +1,28 @@
+{
+  "benchmark_only": true,
+  "task": "grpo",
+  "training_process_seconds": 90.75045604399998,
+  "generation_process_seconds": 55.284754373,
+  "generation": {
+    "n": 4,
+    "response_length": {
+      "mean": 240.25,
+      "std": 183.47530487779548,
+      "count": 4
+    },
+    "truncated_fraction": 0.25,
+    "reward": {
+      "mean": 1.226806640625,
+      "std": 1.5661954856878133,
+      "count": 4
+    },
+    "kl": 2.2450165433516488e-06,
+    "entropy": 0.873909205477394,
+    "sample_entropy": 0.6732172415234172,
+    "kl_averaging": "mean over all valid generated response tokens"
+  },
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ]
+}

@@ -1,0 +1,889 @@
+{
+  "records": [
+    {
+      "source_index": "124",
+      "epsilon": 0.05,
+      "loss": 0.00037280592368915677,
+      "valid_tokens": 313,
+      "clip_fraction": 0.08626198023557663,
+      "affected_token_fraction": 0.08626198023557663,
+      "changed_surrogate_fraction": 0.08626198023557663
+    },
+    {
+      "source_index": "124",
+      "epsilon": 0.2,
+      "loss": -0.0008553849183954298,
+      "valid_tokens": 313,
+      "clip_fraction": 0.00319488812237978,
+      "affected_token_fraction": 0.00319488812237978,
+      "changed_surrogate_fraction": 0.00319488812237978
+    },
+    {
+      "source_index": "124",
+      "epsilon": 0.5,
+      "loss": -0.0009277879726141691,
+      "valid_tokens": 313,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "671",
+      "epsilon": 0.05,
+      "loss": 0.0069330898113548756,
+      "valid_tokens": 389,
+      "clip_fraction": 0.1542416512966156,
+      "affected_token_fraction": 0.1542416512966156,
+      "changed_surrogate_fraction": 0.1542416512966156
+    },
+    {
+      "source_index": "671",
+      "epsilon": 0.2,
+      "loss": 0.005915143061429262,
+      "valid_tokens": 389,
+      "clip_fraction": 0.010282776318490505,
+      "affected_token_fraction": 0.010282776318490505,
+      "changed_surrogate_fraction": 0.010282776318490505
+    },
+    {
+      "source_index": "671",
+      "epsilon": 0.5,
+      "loss": 0.005832125432789326,
+      "valid_tokens": 389,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "510",
+      "epsilon": 0.05,
+      "loss": 0.00032641596044413745,
+      "valid_tokens": 228,
+      "clip_fraction": 0.10087719559669495,
+      "affected_token_fraction": 0.10087719559669495,
+      "changed_surrogate_fraction": 0.10087719559669495
+    },
+    {
+      "source_index": "510",
+      "epsilon": 0.2,
+      "loss": -0.0007705521420575678,
+      "valid_tokens": 228,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "510",
+      "epsilon": 0.5,
+      "loss": -0.0007705521420575678,
+      "valid_tokens": 228,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "981",
+      "epsilon": 0.05,
+      "loss": -0.0021507740020751953,
+      "valid_tokens": 14,
+      "clip_fraction": 0.1428571492433548,
+      "affected_token_fraction": 0.1428571492433548,
+      "changed_surrogate_fraction": 0.1428571492433548
+    },
+    {
+      "source_index": "981",
+      "epsilon": 0.2,
+      "loss": -0.003442032029852271,
+      "valid_tokens": 14,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "981",
+      "epsilon": 0.5,
+      "loss": -0.003442032029852271,
+      "valid_tokens": 14,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "175",
+      "epsilon": 0.05,
+      "loss": 0.06549584120512009,
+      "valid_tokens": 512,
+      "clip_fraction": 0.1953125,
+      "affected_token_fraction": 0.1953125,
+      "changed_surrogate_fraction": 0.1953125
+    },
+    {
+      "source_index": "175",
+      "epsilon": 0.2,
+      "loss": 0.05895036831498146,
+      "valid_tokens": 512,
+      "clip_fraction": 0.123046875,
+      "affected_token_fraction": 0.123046875,
+      "changed_surrogate_fraction": 0.123046875
+    },
+    {
+      "source_index": "175",
+      "epsilon": 0.5,
+      "loss": 0.04854951798915863,
+      "valid_tokens": 512,
+      "clip_fraction": 0.095703125,
+      "affected_token_fraction": 0.095703125,
+      "changed_surrogate_fraction": 0.095703125
+    },
+    {
+      "source_index": "185",
+      "epsilon": 0.05,
+      "loss": 0.0010125978151336312,
+      "valid_tokens": 336,
+      "clip_fraction": 0.0565476194024086,
+      "affected_token_fraction": 0.0565476194024086,
+      "changed_surrogate_fraction": 0.0565476194024086
+    },
+    {
+      "source_index": "185",
+      "epsilon": 0.2,
+      "loss": 0.00025566277327015996,
+      "valid_tokens": 336,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "185",
+      "epsilon": 0.5,
+      "loss": 0.00025566277327015996,
+      "valid_tokens": 336,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "953",
+      "epsilon": 0.05,
+      "loss": 0.004157554358243942,
+      "valid_tokens": 43,
+      "clip_fraction": 0.1627907007932663,
+      "affected_token_fraction": 0.1627907007932663,
+      "changed_surrogate_fraction": 0.1627907007932663
+    },
+    {
+      "source_index": "953",
+      "epsilon": 0.2,
+      "loss": 0.0026199817657470703,
+      "valid_tokens": 43,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "953",
+      "epsilon": 0.5,
+      "loss": 0.0026199817657470703,
+      "valid_tokens": 43,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "873",
+      "epsilon": 0.05,
+      "loss": 0.002550659701228142,
+      "valid_tokens": 512,
+      "clip_fraction": 0.134765625,
+      "affected_token_fraction": 0.134765625,
+      "changed_surrogate_fraction": 0.134765625
+    },
+    {
+      "source_index": "873",
+      "epsilon": 0.2,
+      "loss": 0.000643167644739151,
+      "valid_tokens": 512,
+      "clip_fraction": 0.001953125,
+      "affected_token_fraction": 0.001953125,
+      "changed_surrogate_fraction": 0.001953125
+    },
+    {
+      "source_index": "873",
+      "epsilon": 0.5,
+      "loss": -0.0004036407917737961,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "796",
+      "epsilon": 0.05,
+      "loss": -0.00011117756366729736,
+      "valid_tokens": 512,
+      "clip_fraction": 0.109375,
+      "affected_token_fraction": 0.109375,
+      "changed_surrogate_fraction": 0.109375
+    },
+    {
+      "source_index": "796",
+      "epsilon": 0.2,
+      "loss": -0.002436857670545578,
+      "valid_tokens": 512,
+      "clip_fraction": 0.001953125,
+      "affected_token_fraction": 0.001953125,
+      "changed_surrogate_fraction": 0.001953125
+    },
+    {
+      "source_index": "796",
+      "epsilon": 0.5,
+      "loss": -0.0024693049490451813,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "263",
+      "epsilon": 0.05,
+      "loss": 0.0012404908193275332,
+      "valid_tokens": 229,
+      "clip_fraction": 0.10917030274868011,
+      "affected_token_fraction": 0.10917030274868011,
+      "changed_surrogate_fraction": 0.10917030274868011
+    },
+    {
+      "source_index": "263",
+      "epsilon": 0.2,
+      "loss": -0.0003175745951011777,
+      "valid_tokens": 229,
+      "clip_fraction": 0.0043668122962117195,
+      "affected_token_fraction": 0.0043668122962117195,
+      "changed_surrogate_fraction": 0.0043668122962117195
+    },
+    {
+      "source_index": "263",
+      "epsilon": 0.5,
+      "loss": -0.0003175745951011777,
+      "valid_tokens": 229,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "507",
+      "epsilon": 0.05,
+      "loss": 0.015990376472473145,
+      "valid_tokens": 10,
+      "clip_fraction": 0.10000000149011612,
+      "affected_token_fraction": 0.10000000149011612,
+      "changed_surrogate_fraction": 0.10000000149011612
+    },
+    {
+      "source_index": "507",
+      "epsilon": 0.2,
+      "loss": 0.015990376472473145,
+      "valid_tokens": 10,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "507",
+      "epsilon": 0.5,
+      "loss": 0.015990376472473145,
+      "valid_tokens": 10,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "961",
+      "epsilon": 0.05,
+      "loss": 0.0010091103613376617,
+      "valid_tokens": 419,
+      "clip_fraction": 0.1193317398428917,
+      "affected_token_fraction": 0.1193317398428917,
+      "changed_surrogate_fraction": 0.1193317398428917
+    },
+    {
+      "source_index": "961",
+      "epsilon": 0.2,
+      "loss": 0.00010324264439987019,
+      "valid_tokens": 419,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "961",
+      "epsilon": 0.5,
+      "loss": 0.00010324264439987019,
+      "valid_tokens": 419,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "280",
+      "epsilon": 0.05,
+      "loss": -0.011498600244522095,
+      "valid_tokens": 2,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "280",
+      "epsilon": 0.2,
+      "loss": -0.011498600244522095,
+      "valid_tokens": 2,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "280",
+      "epsilon": 0.5,
+      "loss": -0.011498600244522095,
+      "valid_tokens": 2,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "936",
+      "epsilon": 0.05,
+      "loss": 0.0013955446192994714,
+      "valid_tokens": 272,
+      "clip_fraction": 0.1507352888584137,
+      "affected_token_fraction": 0.1507352888584137,
+      "changed_surrogate_fraction": 0.1507352888584137
+    },
+    {
+      "source_index": "936",
+      "epsilon": 0.2,
+      "loss": -0.0002593380631878972,
+      "valid_tokens": 272,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "936",
+      "epsilon": 0.5,
+      "loss": -0.0002593380631878972,
+      "valid_tokens": 272,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "254",
+      "epsilon": 0.05,
+      "loss": 0.0013508051633834839,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0859375,
+      "affected_token_fraction": 0.0859375,
+      "changed_surrogate_fraction": 0.0859375
+    },
+    {
+      "source_index": "254",
+      "epsilon": 0.2,
+      "loss": 0.0008768411353230476,
+      "valid_tokens": 512,
+      "clip_fraction": 0.001953125,
+      "affected_token_fraction": 0.001953125,
+      "changed_surrogate_fraction": 0.001953125
+    },
+    {
+      "source_index": "254",
+      "epsilon": 0.5,
+      "loss": 0.0008768411353230476,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "463",
+      "epsilon": 0.05,
+      "loss": 0.0001541495294077322,
+      "valid_tokens": 440,
+      "clip_fraction": 0.1409090906381607,
+      "affected_token_fraction": 0.1409090906381607,
+      "changed_surrogate_fraction": 0.1409090906381607
+    },
+    {
+      "source_index": "463",
+      "epsilon": 0.2,
+      "loss": -0.0016775575932115316,
+      "valid_tokens": 440,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "463",
+      "epsilon": 0.5,
+      "loss": -0.0016775575932115316,
+      "valid_tokens": 440,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "436",
+      "epsilon": 0.05,
+      "loss": 0.0010897237807512283,
+      "valid_tokens": 512,
+      "clip_fraction": 0.08203125,
+      "affected_token_fraction": 0.08203125,
+      "changed_surrogate_fraction": 0.08203125
+    },
+    {
+      "source_index": "436",
+      "epsilon": 0.2,
+      "loss": 0.00024435855448246,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "436",
+      "epsilon": 0.5,
+      "loss": 0.00024435855448246,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "942",
+      "epsilon": 0.05,
+      "loss": 0.004709869157522917,
+      "valid_tokens": 244,
+      "clip_fraction": 0.08606557548046112,
+      "affected_token_fraction": 0.08606557548046112,
+      "changed_surrogate_fraction": 0.08606557548046112
+    },
+    {
+      "source_index": "942",
+      "epsilon": 0.2,
+      "loss": 0.004157398361712694,
+      "valid_tokens": 244,
+      "clip_fraction": 0.004098360426723957,
+      "affected_token_fraction": 0.004098360426723957,
+      "changed_surrogate_fraction": 0.004098360426723957
+    },
+    {
+      "source_index": "942",
+      "epsilon": 0.5,
+      "loss": 0.004157398361712694,
+      "valid_tokens": 244,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "184",
+      "epsilon": 0.05,
+      "loss": 0.0008626352646388113,
+      "valid_tokens": 492,
+      "clip_fraction": 0.09552845358848572,
+      "affected_token_fraction": 0.09552845358848572,
+      "changed_surrogate_fraction": 0.09552845358848572
+    },
+    {
+      "source_index": "184",
+      "epsilon": 0.2,
+      "loss": -0.0002704558428376913,
+      "valid_tokens": 492,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "184",
+      "epsilon": 0.5,
+      "loss": -0.0002704558428376913,
+      "valid_tokens": 492,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "922",
+      "epsilon": 0.05,
+      "loss": 0.0007696465472690761,
+      "valid_tokens": 19,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "922",
+      "epsilon": 0.2,
+      "loss": 0.0007696465472690761,
+      "valid_tokens": 19,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "922",
+      "epsilon": 0.5,
+      "loss": 0.0007696465472690761,
+      "valid_tokens": 19,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "755",
+      "epsilon": 0.05,
+      "loss": 0.0008743223152123392,
+      "valid_tokens": 363,
+      "clip_fraction": 0.13223139941692352,
+      "affected_token_fraction": 0.13223139941692352,
+      "changed_surrogate_fraction": 0.13223139941692352
+    },
+    {
+      "source_index": "755",
+      "epsilon": 0.2,
+      "loss": -0.00017770525300875306,
+      "valid_tokens": 363,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "755",
+      "epsilon": 0.5,
+      "loss": -0.00017770525300875306,
+      "valid_tokens": 363,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "457",
+      "epsilon": 0.05,
+      "loss": 0.005759705323725939,
+      "valid_tokens": 22,
+      "clip_fraction": 0.04545454680919647,
+      "affected_token_fraction": 0.04545454680919647,
+      "changed_surrogate_fraction": 0.04545454680919647
+    },
+    {
+      "source_index": "457",
+      "epsilon": 0.2,
+      "loss": 0.005385659169405699,
+      "valid_tokens": 22,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "457",
+      "epsilon": 0.5,
+      "loss": 0.005385659169405699,
+      "valid_tokens": 22,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "832",
+      "epsilon": 0.05,
+      "loss": 0.001657186890952289,
+      "valid_tokens": 468,
+      "clip_fraction": 0.03205128386616707,
+      "affected_token_fraction": 0.03205128386616707,
+      "changed_surrogate_fraction": 0.03205128386616707
+    },
+    {
+      "source_index": "832",
+      "epsilon": 0.2,
+      "loss": 0.001606657519005239,
+      "valid_tokens": 468,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "832",
+      "epsilon": 0.5,
+      "loss": 0.001606657519005239,
+      "valid_tokens": 468,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "495",
+      "epsilon": 0.05,
+      "loss": 0.004155387636274099,
+      "valid_tokens": 12,
+      "clip_fraction": 0.25,
+      "affected_token_fraction": 0.25,
+      "changed_surrogate_fraction": 0.25
+    },
+    {
+      "source_index": "495",
+      "epsilon": 0.2,
+      "loss": -0.004622300621122122,
+      "valid_tokens": 12,
+      "clip_fraction": 0.0833333358168602,
+      "affected_token_fraction": 0.0833333358168602,
+      "changed_surrogate_fraction": 0.0833333358168602
+    },
+    {
+      "source_index": "495",
+      "epsilon": 0.5,
+      "loss": -0.005799988750368357,
+      "valid_tokens": 12,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "803",
+      "epsilon": 0.05,
+      "loss": 0.0014665722846984863,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0859375,
+      "affected_token_fraction": 0.0859375,
+      "changed_surrogate_fraction": 0.0859375
+    },
+    {
+      "source_index": "803",
+      "epsilon": 0.2,
+      "loss": 0.0006252322345972061,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "803",
+      "epsilon": 0.5,
+      "loss": 0.0006252322345972061,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "149",
+      "epsilon": 0.05,
+      "loss": 0.003018757328391075,
+      "valid_tokens": 512,
+      "clip_fraction": 0.1171875,
+      "affected_token_fraction": 0.1171875,
+      "changed_surrogate_fraction": 0.1171875
+    },
+    {
+      "source_index": "149",
+      "epsilon": 0.2,
+      "loss": 0.002492086961865425,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "149",
+      "epsilon": 0.5,
+      "loss": 0.002492086961865425,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "569",
+      "epsilon": 0.05,
+      "loss": 0.0012969132512807846,
+      "valid_tokens": 512,
+      "clip_fraction": 0.09765625,
+      "affected_token_fraction": 0.09765625,
+      "changed_surrogate_fraction": 0.09765625
+    },
+    {
+      "source_index": "569",
+      "epsilon": 0.2,
+      "loss": -1.6734004020690918e-05,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "569",
+      "epsilon": 0.5,
+      "loss": -1.6734004020690918e-05,
+      "valid_tokens": 512,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "565",
+      "epsilon": 0.05,
+      "loss": -0.0053662387654185295,
+      "valid_tokens": 80,
+      "clip_fraction": 0.17499999701976776,
+      "affected_token_fraction": 0.17499999701976776,
+      "changed_surrogate_fraction": 0.17499999701976776
+    },
+    {
+      "source_index": "565",
+      "epsilon": 0.2,
+      "loss": -0.007899856194853783,
+      "valid_tokens": 80,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "565",
+      "epsilon": 0.5,
+      "loss": -0.007899856194853783,
+      "valid_tokens": 80,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "236",
+      "epsilon": 0.05,
+      "loss": 0.002808739198371768,
+      "valid_tokens": 34,
+      "clip_fraction": 0.029411764815449715,
+      "affected_token_fraction": 0.029411764815449715,
+      "changed_surrogate_fraction": 0.029411764815449715
+    },
+    {
+      "source_index": "236",
+      "epsilon": 0.2,
+      "loss": 0.002808739198371768,
+      "valid_tokens": 34,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "236",
+      "epsilon": 0.5,
+      "loss": 0.002808739198371768,
+      "valid_tokens": 34,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "716",
+      "epsilon": 0.05,
+      "loss": 0.0014960471307858825,
+      "valid_tokens": 267,
+      "clip_fraction": 0.056179776787757874,
+      "affected_token_fraction": 0.056179776787757874,
+      "changed_surrogate_fraction": 0.056179776787757874
+    },
+    {
+      "source_index": "716",
+      "epsilon": 0.2,
+      "loss": 0.0009439625428058207,
+      "valid_tokens": 267,
+      "clip_fraction": 0.00374531839042902,
+      "affected_token_fraction": 0.00374531839042902,
+      "changed_surrogate_fraction": 0.00374531839042902
+    },
+    {
+      "source_index": "716",
+      "epsilon": 0.5,
+      "loss": 0.0009439625428058207,
+      "valid_tokens": 267,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "805",
+      "epsilon": 0.05,
+      "loss": 0.0007546714623458683,
+      "valid_tokens": 14,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "805",
+      "epsilon": 0.2,
+      "loss": 0.0007546714623458683,
+      "valid_tokens": 14,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "805",
+      "epsilon": 0.5,
+      "loss": 0.0007546714623458683,
+      "valid_tokens": 14,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "798",
+      "epsilon": 0.05,
+      "loss": -0.01176847517490387,
+      "valid_tokens": 8,
+      "clip_fraction": 0.25,
+      "affected_token_fraction": 0.25,
+      "changed_surrogate_fraction": 0.25
+    },
+    {
+      "source_index": "798",
+      "epsilon": 0.2,
+      "loss": -0.02493925392627716,
+      "valid_tokens": 8,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    },
+    {
+      "source_index": "798",
+      "epsilon": 0.5,
+      "loss": -0.02493925392627716,
+      "valid_tokens": 8,
+      "clip_fraction": 0.0,
+      "affected_token_fraction": 0.0,
+      "changed_surrogate_fraction": 0.0
+    }
+  ],
+  "summary": {
+    "0.05": {
+      "loss": 0.005275807068835628,
+      "clip_fraction": 0.10766961635053428,
+      "affected_token_fraction": 0.10766961635053428,
+      "changed_surrogate_fraction": 0.10766961635053428
+    },
+    "0.2": {
+      "loss": 0.003846775478030402,
+      "clip_fraction": 0.00850918992173788,
+      "affected_token_fraction": 0.00850918992173788,
+      "changed_surrogate_fraction": 0.00850918992173788
+    },
+    "0.5": {
+      "loss": 0.003172064499590412,
+      "clip_fraction": 0.005559337417744497,
+      "affected_token_fraction": 0.005559337417744497,
+      "changed_surrogate_fraction": 0.005559337417744497
+    }
+  },
+  "averaging": "valid-response-token weighted"
+}

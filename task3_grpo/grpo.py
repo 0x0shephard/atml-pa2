@@ -11,10 +11,15 @@ def group_relative_advantages(rewards: torch.Tensor, group_ids: torch.Tensor, ep
     `group_ids[i]` identifies which prompt produced reward `rewards[i]`.
     Validate this implementation against the group-relative definition in the assignment manual.
     """
-    # Starter implementation: students must validate the grouping logic carefully.
-    mean = rewards.mean()
-    std = rewards.std(unbiased=False).clamp_min(eps)
-    return (rewards - mean) / std
+    if rewards.ndim != 1 or rewards.shape != group_ids.shape:
+        raise ValueError("rewards and group_ids must be matching one-dimensional tensors")
+    advantages = torch.zeros_like(rewards)
+    for gid in torch.unique(group_ids):
+        selected = group_ids == gid
+        group = rewards[selected]
+        advantages[selected] = (group - group.mean()) / (group.std(unbiased=False) + eps)
+    return advantages
+
 
 
 def grpo_policy_loss(

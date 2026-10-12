@@ -1,0 +1,28 @@
+{
+  "benchmark_only": true,
+  "task": "ppo",
+  "training_process_seconds": 81.54224279700003,
+  "generation_process_seconds": 63.93986569500004,
+  "generation": {
+    "n": 4,
+    "response_length": {
+      "mean": 304.25,
+      "std": 284.13938041038944,
+      "count": 4
+    },
+    "truncated_fraction": 0.25,
+    "reward": {
+      "mean": 0.2890625,
+      "std": 3.151548226153495,
+      "count": 4
+    },
+    "kl": -3.301272828410469e-05,
+    "entropy": 0.8431857422226848,
+    "sample_entropy": 0.6380121666775831,
+    "kl_averaging": "mean over all valid generated response tokens"
+  },
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ]
+}

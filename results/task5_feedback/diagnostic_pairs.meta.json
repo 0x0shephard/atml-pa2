@@ -1,0 +1,33 @@
+{
+  "fingerprint": "b93e3d57128850e6dcc63bf91ef175e6e1d530a071508b1b226b8e5d074c4691",
+  "provenance": {
+    "groups": {
+      "count": 20,
+      "sha256": "270674cb481553ded16eeebb49a3d92ae1102d0a3feae5f2d4c6052ac9e80125",
+      "problem_ids": [
+        "103",
+        "1122",
+        "113",
+        "1200",
+        "1245",
+        "23",
+        "289",
+        "299",
+        "459",
+        "505",
+        "506",
+        "558",
+        "569",
+        "620",
+        "677",
+        "681",
+        "736",
+        "750",
+        "803",
+        "867"
+      ]
+    },
+    "judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "source_sha256": "3d480efa7c41d22447ba93d360fff02cc054d8064d3d3f9d0f3811c3a5e6b2ec"
+  }
+}

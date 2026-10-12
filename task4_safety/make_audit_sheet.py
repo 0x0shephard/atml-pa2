@@ -30,10 +30,21 @@ def main():
     if not src.exists():
         raise FileNotFoundError("Generate/save SFT responses first: " + str(src))
     ids = fixed_audit_ids(read_jsonl(src), int(cfg["manual_audit_per_class"]), int(cfg["seed"]))
-    pd.DataFrame({"xstest_id": ids, "manual_label": [""] * len(ids)}).to_csv(outdir / "manual_audit_ids.csv", index=False)
-    print("Wrote fixed audit IDs:", outdir / "manual_audit_ids.csv")
-    print("Join these IDs to each policy's generated responses and label without viewing AI labels first.")
-
+    output = outdir / "manual_audit.csv"
+    if output.exists():
+        raise FileExistsError(f"Refusing to overwrite your manual labels: {output}")
+    records = []
+    for policy in ("sft", "dpo", "ppo", "grpo"):
+        rows = {int(row["xstest_id"]): row for row in read_jsonl(outdir / f"generated_{policy}.jsonl")}
+        for xid in ids:
+            row = rows[xid]
+            prompt = row["prompt"] if isinstance(row["prompt"], str) else "\n".join(m["content"] for m in row["prompt"])
+            records.append({"xstest_id": xid, "policy": policy, "benchmark_class": row["benchmark_class"],
+                            "type": row["type"], "prompt": prompt, "response": row["response"],
+                            "manual_label": "", "notes": ""})
+    pd.DataFrame(records).to_csv(output, index=False)
+    pd.DataFrame({"xstest_id": ids}).to_csv(outdir / "manual_audit_ids.csv", index=False)
+    print(f"Wrote {len(ids)} fixed prompts, {len(records)} blind policy-response labels: {output}")
 
 if __name__ == "__main__":
     main()

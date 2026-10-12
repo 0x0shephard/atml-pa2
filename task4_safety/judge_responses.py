@@ -103,20 +103,31 @@ def judge_one(tok, model, prompt, response, max_new_tokens=64):
 
 
 def main():
+    from common.runtime import RecordStore
+    from common.data import repo_path
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="configs/feedback.yaml")
-    ap.add_argument("--input", help="Optional generated JSONL file to inspect")
+    ap.add_argument("--input")
+    ap.add_argument("--policy", choices=["sft", "dpo", "ppo", "grpo"])
     args = ap.parse_args()
     cfg = load_yaml(args.config)
+    root = repo_path(cfg["results_dir"]) / "task4_safety"
+    inputs = [repo_path(args.input)] if args.input else [root / f"generated_{name}.jsonl" for name in ([args.policy] if args.policy else ["sft", "dpo", "ppo", "grpo"])]
+    pending = []
+    for path in inputs:
+        rows = read_jsonl(path)
+        store = RecordStore(path.with_name(path.name.replace("generated_", "judged_")), {"rows": rows, "judge": cfg["ai_judge_model"], "rubric": JUDGE_PROMPT, "max_new_tokens": cfg["judge_max_new_tokens"]})
+        pending.append((rows, store))
+    if all(len(rows) == len(store.rows) for rows, store in pending):
+        return
     tok, model = load_judge(cfg)
-    print("Fixed Task 4 judge loaded:", cfg["ai_judge_model"])
-    if args.input:
-        rows = read_jsonl(args.input)
-        print("Input rows:", len(rows))
-    raise NotImplementedError(
-        "TODO(student): apply judge_one to your frozen-policy response files, cache the labels, and implement the required Task 4 aggregation."
-    )
-
+    for rows, store in pending:
+        for row in rows:
+            if row["record_id"] in store.keys:
+                continue
+            prompt = row["prompt"] if isinstance(row["prompt"], str) else "\n".join(m["content"] for m in row["prompt"])
+            label = judge_one(tok, model, prompt, row["response"], int(cfg["judge_max_new_tokens"]))
+            store.append({**row, "judge": label})
 
 if __name__ == "__main__":
     main()

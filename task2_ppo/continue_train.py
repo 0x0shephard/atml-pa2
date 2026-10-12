@@ -61,7 +61,7 @@ def prepare_ppo_continuation(config_path: str):
     }
 
 
-def run_ppo(config_path: str, output: str | None = None, updates: int | None = None, clip_epsilon: float | None = None, kl_beta: float | None = None, run_name: str = "standard"):
+def run_ppo(config_path: str, output: str | None = None, updates: int | None = None, clip_epsilon: float | None = None, kl_beta: float | None = None, run_name: str = "standard", resume: bool = False):
     bundle = prepare_ppo_continuation(config_path)
     cfg = bundle["cfg"]
     if updates is not None:
@@ -70,15 +70,9 @@ def run_ppo(config_path: str, output: str | None = None, updates: int | None = N
         cfg["clip_epsilon"] = float(clip_epsilon)
     if kl_beta is not None:
         cfg["kl_beta"] = float(kl_beta)
-    out = repo_path(output or cfg["output"])
-    out.parent.mkdir(parents=True, exist_ok=True)
-
-    raise NotImplementedError(
-        "TODO(student): implement the 20-update PPO continuation from the supplied midpoint. "
-        "Your loop must collect on-policy rollouts, compute old/reference log-probs, learned reward, "
-        "KL-shaped rewards, GAE/returns, policy/value losses, clipping diagnostics, entropy, gradient norms, "
-        "response length, wall-clock time, and peak VRAM. Validate task2_ppo.ppo before running experiments."
-    )
+    from common.online import run_online
+    out = repo_path(output or f"outputs/task2_ppo/{run_name}")
+    return run_online(bundle, out, run_name, "ppo", resume)
 
 
 def main():
@@ -89,8 +83,9 @@ def main():
     ap.add_argument("--clip-epsilon", type=float)
     ap.add_argument("--kl-beta", type=float)
     ap.add_argument("--run-name", default="standard")
+    ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
-    run_ppo(args.config, args.output, args.updates, args.clip_epsilon, args.kl_beta, args.run_name)
+    run_ppo(args.config, args.output, args.updates, args.clip_epsilon, args.kl_beta, args.run_name, args.resume)
 
 
 if __name__ == "__main__":

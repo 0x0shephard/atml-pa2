@@ -1,0 +1,112 @@
+{
+  "n": 200,
+  "response_length": {
+    "mean": 296.98,
+    "std": 249.99569916300558,
+    "count": 200
+  },
+  "truncated_fraction": 0.085,
+  "reward": {
+    "mean": 1.5623600196838379,
+    "std": 1.4248765789770712,
+    "count": 200
+  },
+  "kl": 9.154189562951737e-06,
+  "entropy": 1.0403186958506467,
+  "sample_entropy": 0.8250646925725382,
+  "kl_averaging": "mean over all valid generated response tokens",
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "updates": 20,
+    "fork_updates": 8,
+    "prompts_per_update": 1,
+    "ppo_epochs": 2,
+    "policy_learning_rate": 3e-06,
+    "value_lora_learning_rate": 0.0001,
+    "value_head_learning_rate": 0.0003,
+    "value_train_mode": "lora_head",
+    "clip_epsilon": 0.2,
+    "clip_values": [
+      0.05,
+      0.2,
+      0.5
+    ],
+    "kl_beta": 0.1,
+    "kl_values": [
+      0.0,
+      0.1,
+      0.2
+    ],
+    "gamma": 1.0,
+    "gae_lambda": 0.95,
+    "value_coef": 0.5,
+    "missing_eos_penalty": 1.0,
+    "max_prompt_length": 256,
+    "max_response_length": 512,
+    "eval_max_response_length": 768,
+    "reward_max_length": 1280,
+    "max_grad_norm": 1.0,
+    "output": "outputs/task2_ppo/standard",
+    "results_dir": "results/task2_ppo",
+    "cached_rollouts": "cached/ppo_rollout.pt"
+  },
+  "policy": {
+    "adapter": "outputs/task2_ppo/clip_0.05",
+    "files": {
+      "adapter_config.json": "18993c388788ec14de72fd4f6f9ff86ce761ffc3aad5d0923b33f4365be03d97",
+      "adapter_model.safetensors": "cf8fdb4ff533b5e8150595e8953c0d6bb35bc2f9f7bd92adb427efd7fb6a9e86",
+      "run.json": "9020107acd2909113a18eecd06e84f7c67f99bf285dfc0c7917f2ffac719485e"
+    }
+  }
+}

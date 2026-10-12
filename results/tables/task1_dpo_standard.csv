@@ -1,0 +1,2 @@
+condition,source,n,preference_accuracy,heldout_dpo_loss,kl,entropy,sample_entropy,truncated_fraction,reward,response_length,response_length_std
+standard,task1_dpo/standard_metrics.json,300,0.6413793103448275,0.674071810882667,-7.459684161797834e-06,1.0422215514248738,0.8111980055446759,0.49,0.9641827901204427,168.52,101.97811660678319

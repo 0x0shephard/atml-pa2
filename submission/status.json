@@ -1,0 +1,230 @@
+{
+  "experiment_jobs": 32,
+  "benchmark_jobs": 3,
+  "job_receipts": {
+    "benchmark_dpo": {
+      "run_id": "benchmark_dpo",
+      "status": "complete",
+      "source_sha256": "04493e08366d555d6c00605ccc9c818a8a321c81a9100e8ee1f8c3bb351c0b9b",
+      "wall_clock_seconds": 257.93933391571045
+    },
+    "dpo_standard": {
+      "run_id": "dpo_standard",
+      "status": "complete",
+      "source_sha256": "f43b9c1fd9d7c8ec0a9a4bf8c7b5a9f5abef9319f86608b1a86810dc025df214",
+      "wall_clock_seconds": 3901.481716156006
+    },
+    "benchmark_ppo": {
+      "run_id": "benchmark_ppo",
+      "status": "complete",
+      "source_sha256": "04493e08366d555d6c00605ccc9c818a8a321c81a9100e8ee1f8c3bb351c0b9b",
+      "wall_clock_seconds": 246.191823720932
+    },
+    "ppo_standard": {
+      "run_id": "ppo_standard",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3339.5455963611603
+    },
+    "benchmark_grpo": {
+      "run_id": "benchmark_grpo",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 248.31641459465027
+    },
+    "grpo_standard": {
+      "run_id": "grpo_standard",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 2998.560482740402
+    },
+    "dpo_beta_003": {
+      "run_id": "dpo_beta_003",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3367.8602347373962
+    },
+    "dpo_beta_010": {
+      "run_id": "dpo_beta_010",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3266.7815873622894
+    },
+    "dpo_beta_030": {
+      "run_id": "dpo_beta_030",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3698.5930914878845
+    },
+    "dpo_length": {
+      "run_id": "dpo_length",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 1435.5251569747925
+    },
+    "ppo_cached_clipping": {
+      "run_id": "ppo_cached_clipping",
+      "status": "complete",
+      "source_sha256": "a0d0469a3efa199efa40c33e55f75fb7dfdf75e24f74bb5e6933151acf0bf258",
+      "wall_clock_seconds": 137.46446752548218
+    },
+    "ppo_clip_005": {
+      "run_id": "ppo_clip_005",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3131.8295817375183
+    },
+    "ppo_clip_020": {
+      "run_id": "ppo_clip_020",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3083.0166363716125
+    },
+    "ppo_clip_050": {
+      "run_id": "ppo_clip_050",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3117.697491168976
+    },
+    "ppo_kl_000": {
+      "run_id": "ppo_kl_000",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3081.270550966263
+    },
+    "ppo_kl_010": {
+      "run_id": "ppo_kl_010",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 2988.5463461875916
+    },
+    "ppo_kl_020": {
+      "run_id": "ppo_kl_020",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3037.6685383319855
+    },
+    "grpo_groups": {
+      "run_id": "grpo_groups",
+      "status": "complete",
+      "source_sha256": "f84489b507f1bed82aeda32e7f75273e7e7a37ffe6aa5e68513a35735641cebc",
+      "wall_clock_seconds": 103.80445647239685
+    },
+    "grpo_normalization_grpo": {
+      "run_id": "grpo_normalization_grpo",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 2644.0688405036926
+    },
+    "grpo_normalization_dr_grpo": {
+      "run_id": "grpo_normalization_dr_grpo",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 2702.831682443619
+    },
+    "safety_sft": {
+      "run_id": "safety_sft",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 2997.8939821720123
+    },
+    "safety_dpo": {
+      "run_id": "safety_dpo",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3592.512553691864
+    },
+    "safety_ppo": {
+      "run_id": "safety_ppo",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3430.4101717472076
+    },
+    "safety_grpo": {
+      "run_id": "safety_grpo",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3390.553874731064
+    },
+    "safety_aggregate": {
+      "run_id": "safety_aggregate",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 115.56098484992981
+    },
+    "math_gsm_sft": {
+      "run_id": "math_gsm_sft",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 2919.5870265960693
+    },
+    "math_gsm_rlvr": {
+      "run_id": "math_gsm_rlvr",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3808.0867743492126
+    },
+    "math_gsm_rlaif": {
+      "run_id": "math_gsm_rlaif",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 3647.2393538951874
+    },
+    "math_gsm_judge": {
+      "run_id": "math_gsm_judge",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 362.797819852829
+    },
+    "math_transfer_sft": {
+      "run_id": "math_transfer_sft",
+      "status": "complete",
+      "source_sha256": "132f77c459c009f5300b828ad77d34b7dc48526f32df998014f3ab2a24e22de2",
+      "wall_clock_seconds": 672.5074112415314
+    },
+    "math_transfer_rlvr": {
+      "run_id": "math_transfer_rlvr",
+      "status": "complete",
+      "source_sha256": "f14cbf94a309cec499d3d530aada8f35f54242f6f2ea5a29a5d9a9d2d45626dc",
+      "wall_clock_seconds": 823.5546429157257
+    },
+    "math_transfer_rlaif": {
+      "run_id": "math_transfer_rlaif",
+      "status": "complete",
+      "source_sha256": "a0d0469a3efa199efa40c33e55f75fb7dfdf75e24f74bb5e6933151acf0bf258",
+      "wall_clock_seconds": 837.838009595871
+    },
+    "math_transfer_judge": {
+      "run_id": "math_transfer_judge",
+      "status": "complete",
+      "source_sha256": "ccae813f513c369c1cf6c110acbffeb1c8f6d2b2c3981ac13f75f655fca320d7",
+      "wall_clock_seconds": 196.3371229171753
+    },
+    "math_diagnostics": {
+      "run_id": "math_diagnostics",
+      "status": "complete",
+      "source_sha256": "a0d0469a3efa199efa40c33e55f75fb7dfdf75e24f74bb5e6933151acf0bf258",
+      "wall_clock_seconds": 168.13329553604126
+    },
+    "math_aggregate": {
+      "run_id": "math_aggregate",
+      "status": "complete",
+      "source_sha256": "ccae813f513c369c1cf6c110acbffeb1c8f6d2b2c3981ac13f75f655fca320d7",
+      "wall_clock_seconds": 107.1200807094574
+    }
+  },
+  "validation_issues": [
+    "Task 4: manual audit is pending or incomplete"
+  ],
+  "submission_ready": false,
+  "remaining": [
+    "Student blind safety audit",
+    "Student-written eight-page report",
+    "Accessible student GitHub repository and final commit",
+    "LMS upload"
+  ],
+  "manual_audit": {
+    "rows": 240,
+    "labeled": 0
+  }
+}

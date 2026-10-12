@@ -1,0 +1,12 @@
+{
+  "tests_run": 25,
+  "failures": 0,
+  "errors": 0,
+  "successful": true,
+  "python": "3.12.14",
+  "torch": "2.4.1",
+  "transformers": "4.52.4",
+  "peft": "0.15.2",
+  "cuda": false,
+  "scope": "CPU mathematical, aggregation, checkpoint and tiny randomly initialized model tests; pinned Kaggle GPU validation pending"
+}

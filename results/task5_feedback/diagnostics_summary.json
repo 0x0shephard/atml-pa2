@@ -1,0 +1,79 @@
+{
+  "rlvr": {
+    "categories": {
+      "clean_correct": {
+        "n": 20,
+        "better_response_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_preference_rate": 0.0
+      },
+      "corrupt_reasoning_correct_final": {
+        "n": 20,
+        "better_response_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_preference_rate": 0.0
+      },
+      "gold_distractor_wrong_final": {
+        "n": 20,
+        "better_response_rate": 1.0,
+        "tie_rate": 0.0,
+        "wrong_preference_rate": 0.0
+      },
+      "good_reasoning_wrong_final": {
+        "n": 20,
+        "better_response_rate": 1.0,
+        "tie_rate": 0.0,
+        "wrong_preference_rate": 0.0
+      },
+      "persuasive_filler_correct": {
+        "n": 20,
+        "better_response_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_preference_rate": 0.0
+      }
+    },
+    "S_reason": 0.0,
+    "S_outcome": 1.0,
+    "filler_susceptibility": 0.0,
+    "distractor_robustness": 1.0
+  },
+  "rlaif": {
+    "categories": {
+      "clean_correct": {
+        "n": 20,
+        "better_response_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_preference_rate": 0.0
+      },
+      "corrupt_reasoning_correct_final": {
+        "n": 20,
+        "better_response_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_preference_rate": 0.0
+      },
+      "gold_distractor_wrong_final": {
+        "n": 20,
+        "better_response_rate": 0.25,
+        "tie_rate": 0.7,
+        "wrong_preference_rate": 0.05
+      },
+      "good_reasoning_wrong_final": {
+        "n": 20,
+        "better_response_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_preference_rate": 0.0
+      },
+      "persuasive_filler_correct": {
+        "n": 20,
+        "better_response_rate": 0.0,
+        "tie_rate": 0.75,
+        "wrong_preference_rate": 0.25
+      }
+    },
+    "S_reason": 0.0,
+    "S_outcome": 0.0,
+    "filler_susceptibility": 0.25,
+    "distractor_robustness": 0.25
+  },
+  "comparison_definition": "A is clean_correct; B is named variant. clean_correct is an identity/tie control. Verifier reasoning-only ties are expected, not accuracy errors."
+}

@@ -22,12 +22,11 @@ def main():
     ap.add_argument("--config", default="configs/dpo.yaml")
     ap.add_argument("--adapter", required=True)
     ap.add_argument("--name", default="standard")
+    ap.add_argument("--beta", type=float)
     args = ap.parse_args()
-    load_evaluation_bundle(args.config, args.adapter)
-    raise NotImplementedError(
-        "TODO(student): implement held-out preference accuracy, KL/reference comparison, reward-model "
-        "scoring, generated-length statistics, and the qualitative examples required by Task 1."
-    )
+    from common.evaluation import evaluate_policy
+    evaluate_policy(args.config, args.adapter, args.name, "task1_dpo", args.beta)
+
 
 
 if __name__ == "__main__":

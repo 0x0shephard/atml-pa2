@@ -1,0 +1,7 @@
+policy,stratum,mean,std,count,word_limit_compliance
+standard,rejected_longer,0.6582278481012658,0.4743036454479796,79,0.5
+standard,preferred_longer,0.47435897435897434,0.4993421049782167,78,0.5
+standard,length_matched,0.5625,0.49607837082461076,80,0.5
+length_balanced,rejected_longer,0.7721518987341772,0.4194440892602757,79,0.5
+length_balanced,preferred_longer,0.44871794871794873,0.4973631984941236,78,0.5
+length_balanced,length_matched,0.625,0.4841229182759271,80,0.5

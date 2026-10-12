@@ -1,0 +1,4 @@
+policy,n,exact_accuracy,format_compliance,ai_pairwise_win_rate_against_sft,pairwise_definition,response_length,response_length_std,judge_ties,judge_ambiguous,verifier_judge_agreement
+sft,300,0.27,0.3466666666666667,0.5,self-comparison control,276.45,87.51472733203252,,,
+rlvr,300,0.3,0.37333333333333335,0.5016666666666667,,275.4533333333333,86.80031387552057,289,0,0.9166666666666666
+rlaif,300,0.29333333333333333,0.37,0.5,,274.92,85.29877060466151,290,0,0.9466666666666667

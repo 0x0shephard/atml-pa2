@@ -1,0 +1,99 @@
+{
+  "fingerprint": "cddc7872bb1dab072531e174ff75358c9454a7e7595befb0206f925bb133ca59",
+  "provenance": {
+    "config": {
+      "seed": 6304,
+      "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+      "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+      "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+      "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+      "dtype": "float16",
+      "quantize_frozen_models": true,
+      "lora": {
+        "r": 8,
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "value_lora": {
+        "r": 8,
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "generation": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "do_sample": true
+      },
+      "paths": {
+        "dpo_standard_train": "data/dpo_standard_train.jsonl",
+        "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+        "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+        "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+        "word_limit_prompts": "data/word_limit_prompts.jsonl",
+        "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+        "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+        "xstest": "data/xstest_safety_prompts.csv",
+        "gsm_train": "data/gsm8k_rl_train.jsonl",
+        "gsm_eval": "data/gsm8k_eval.jsonl",
+        "math_transfer_eval": "data/math_transfer_eval.jsonl",
+        "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+        "ppo_rollout_cache": "cached/ppo_rollout.pt",
+        "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+        "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+        "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+        "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+        "rlvr_policy": "checkpoints/rlvr_policy",
+        "rlaif_policy": "checkpoints/rlaif_policy"
+      },
+      "beta": 0.1,
+      "betas": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "learning_rate": 2e-05,
+      "weight_decay": 0.0,
+      "batch_size": 2,
+      "grad_accum_steps": 8,
+      "epochs": 1,
+      "short_ablation_examples": 600,
+      "max_sequence_length": 768,
+      "max_generation_tokens": 256,
+      "max_grad_norm": 1.0,
+      "standard_output": "outputs/task1_dpo/standard",
+      "length_output": "outputs/task1_dpo/length_balanced",
+      "results_dir": "results/task1_dpo"
+    },
+    "rows": {
+      "count": 4,
+      "sha256": "23aa48467eb2f32369e8fe1bd58d2c49e4541071f80a7755d2a071259446ec09",
+      "example_ids": [
+        "124",
+        "671",
+        "510",
+        "981"
+      ]
+    },
+    "policy": {
+      "adapter": "outputs/benchmarks/dpo",
+      "files": {
+        "adapter_config.json": "b7c4427b92d1514135b9f3530e3fc9134a1f9f460f980c8798a22c7d5fd0d4ae",
+        "adapter_model.safetensors": "5cc074043ada6884fe3e0588a347599f8a834805d2a337be6ef107c4ab5927ad",
+        "run.json": "163b75f021c37b007d219992d511edccd934390acc23409d23e9d20f9ebb8ad5"
+      }
+    },
+    "max_new_tokens": 256,
+    "do_sample": true,
+    "score": true,
+    "source_sha256": "e7d803cb2fe3218d4a68667904b65ba605ae2ef0b5c25dcf5f1af8dd95a69647"
+  }
+}

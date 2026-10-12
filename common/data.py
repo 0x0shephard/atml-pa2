@@ -98,6 +98,22 @@ def render_prompt(tokenizer, messages: list[dict]) -> str:
     )
 
 
+def filter_preference_prompts(tokenizer, rows, max_length):
+    """Keep intact prompts with room for response content and EOS; report coverage."""
+    kept, excluded = [], []
+    for index, row in enumerate(rows):
+        length = len(tokenizer.apply_chat_template(
+            prompt_messages_from_preference(row), tokenize=True, add_generation_prompt=True))
+        if length > max_length - 2:
+            excluded.append({"source_index": index, "prompt_tokens": length})
+        else:
+            kept.append(row)
+    coverage = {"total": len(rows), "retained": len(kept), "excluded": excluded,
+                "max_sequence_length": max_length}
+    print(f"Preference prompt coverage: {len(kept)}/{len(rows)} retained", flush=True)
+    return kept, coverage
+
+
 def encode_prompt_response(
     tokenizer,
     messages: list[dict],

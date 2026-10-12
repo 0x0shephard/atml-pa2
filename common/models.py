@@ -80,9 +80,12 @@ def load_policy(cfg: dict, adapter_path: str | None = None, trainable: bool = Fa
         model = get_peft_model(model, make_lora_config(cfg))
 
     if torch.cuda.is_available():
-        model = model.cuda()
+        model = model.to(cfg.get("policy_device", "cuda:0"))
 
     if trainable:
+        for parameter in model.parameters():
+            if parameter.requires_grad:
+                parameter.data = parameter.data.float()
         model.train()
         model.config.use_cache = False
         if hasattr(model, "gradient_checkpointing_enable"):
@@ -131,13 +134,13 @@ def load_reward_model(cfg: dict):
     qcfg = _quant_config(8 if cfg.get("quantize_frozen_models", True) else None, dtype)
     kwargs = {"num_labels": 1, "low_cpu_mem_usage": True}
     if qcfg is not None:
-        kwargs.update({"quantization_config": qcfg, "device_map": "auto"})
+        kwargs.update({"quantization_config": qcfg, "device_map": {"": cfg.get("reward_device", "cuda:1" if torch.cuda.device_count() > 1 else "cuda:0")}})
     else:
         kwargs["dtype"] = dtype
 
     model = AutoModelForSequenceClassification.from_pretrained(cfg["reward_model"], **kwargs)
     if qcfg is None and torch.cuda.is_available():
-        model = model.cuda()
+        model = model.to(cfg.get("reward_device", "cuda:1" if torch.cuda.device_count() > 1 else "cuda:0"))
 
     # The RM repository tokenizer was incompatible with the pinned Transformers build during
     # instructor preparation. Use the canonical base-policy tokenizer intentionally.
@@ -173,7 +176,7 @@ def load_value_model(cfg: dict, checkpoint: str, train_mode: str = "lora_head"):
         for p in model.parameters():
             p.requires_grad_(False)
         if torch.cuda.is_available():
-            model = model.cuda()
+            model = model.to(cfg.get("value_device", "cuda:0"))
         model.eval()
         return model
     elif train_mode == "full":
@@ -182,7 +185,10 @@ def load_value_model(cfg: dict, checkpoint: str, train_mode: str = "lora_head"):
         raise ValueError(f"Unknown value train_mode={train_mode!r}")
 
     if torch.cuda.is_available():
-        model = model.cuda()
+        model = model.to(cfg.get("value_device", "cuda:0"))
+    for parameter in model.parameters():
+        if parameter.requires_grad:
+            parameter.data = parameter.data.float()
     model.train()
     return model
 
@@ -213,22 +219,26 @@ def value_parameter_groups(model, lora_lr: float, head_lr: float):
 
 
 def token_values(value_model, input_ids, attention_mask):
-    backbone = getattr(value_model, value_model.base_model_prefix)
-    outputs = backbone(
-        input_ids=input_ids,
-        attention_mask=attention_mask,
-        output_hidden_states=True,
-        return_dict=True,
-        use_cache=False,
+    # Unwrap PEFT to reach the causal backbone and the active modules_to_save value head.
+    model = value_model.get_base_model() if isinstance(value_model, PeftModel) else value_model
+    device = next(model.parameters()).device
+    input_ids, attention_mask = input_ids.to(device), attention_mask.to(device)
+    positions = attention_mask.long().cumsum(-1) - 1
+    positions.masked_fill_(attention_mask == 0, 0)
+    outputs = getattr(model, model.base_model_prefix)(
+        input_ids=input_ids, attention_mask=attention_mask, position_ids=positions,
+        return_dict=True, use_cache=False,
     )
-    hidden = outputs.hidden_states[-1]
-    if hasattr(value_model, "score"):
-        head = value_model.score
-    elif hasattr(value_model, "classifier"):
-        head = value_model.classifier
-    else:
+    head = getattr(model, "score", getattr(model, "classifier", None))
+    if head is None:
         raise RuntimeError("Could not locate scalar value head")
-    return head(hidden).squeeze(-1)
+    active_head = head
+    if hasattr(head, "modules_to_save") and not getattr(head, "disable_adapters", False):
+        adapter = head.active_adapter
+        if isinstance(adapter, list): adapter = adapter[0]
+        active_head = head.modules_to_save[adapter]
+    head_dtype = next(active_head.parameters()).dtype
+    return head(outputs.last_hidden_state.to(head_dtype)).squeeze(-1).float()
 
 
 def trainable_parameters(model):

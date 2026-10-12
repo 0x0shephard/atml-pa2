@@ -28,3 +28,12 @@ data/*
 # Misc
 *.zip
 .DS_Store
+
+# Kaggle snapshots, downloaded jobs, credentials and local state
+kaggle_jobs/
+kaggle_downloads/
+.kaggle/
+.env
+*.credentials.json
+credentials.json
+kaggle.json

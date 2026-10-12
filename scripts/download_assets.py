@@ -27,6 +27,8 @@ def main():
         ],
     )
 
+    from scripts.prepare_transfer_eval import materialize_transfer_eval
+    materialize_transfer_eval()
     print("\nCourse assets downloaded.")
     print("Now run: python -m scripts.validate_assets")
 

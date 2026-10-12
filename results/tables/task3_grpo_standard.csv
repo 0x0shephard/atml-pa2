@@ -1,0 +1,2 @@
+condition,source,n,kl,entropy,sample_entropy,truncated_fraction,reward,response_length,response_length_std
+standard,task3_grpo/standard_metrics.json,200,6.058121037554384e-05,1.0418109860978582,0.8217318934320769,0.24,1.2328842544555665,254.605,188.58355966255382

@@ -1,20 +1,33 @@
 from __future__ import annotations
-
 import argparse
-from common.data import load_yaml
-
+import gc
+import json
+from common.data import load_yaml, read_jsonl, repo_path
+from common.runtime import atomic_json, completed
 
 def main():
+    from task3_grpo.continue_train import run_grpo
+    from common.evaluation import evaluate_policy
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="configs/grpo.yaml")
+    ap.add_argument("--loss-type", choices=["grpo", "dr_grpo"])
+    ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
     cfg = load_yaml(args.config)
-    print("Fork updates:", cfg["fork_updates"])
-    print("Compare loss_type='grpo' vs loss_type='dr_grpo' from the identical supplied midpoint.")
-    raise NotImplementedError(
-        "TODO(student): run matched canonical-GRPO and Dr-GRPO short continuations, keeping prompt/generation/reward/KL/token budgets fixed, then analyze length-conditioned behavior."
-    )
-
+    results = {}
+    for loss_type in ([args.loss_type] if args.loss_type else ["grpo", "dr_grpo"]):
+        name = f"normalization_{loss_type}"
+        output = f"outputs/task3_grpo/{name}"
+        if not completed(output):
+            run_grpo(args.config, output, int(cfg["fork_updates"]), loss_type, name, args.resume)
+        gc.collect()
+        metrics = evaluate_policy(args.config, output, name, "task3_grpo")
+        logs = read_jsonl(repo_path(output) / "train.jsonl")
+        results[loss_type] = {"heldout": metrics, "generated_tokens": logs[-1]["generated_tokens"],
+                              "length_conditioned_gradient": [{"update": x["update"], **x["length_conditioned_gradient"]} for x in logs]}
+    # Same updates/prompts/caps are matched; realized token counts can differ after policies diverge.
+    results["budget_convention"] = "Equal updates, prompts, K and maximum generated-token allocation; report realized token counts separately"
+    atomic_json(f"{cfg['results_dir']}/normalization_summary{'_' + args.loss_type if args.loss_type else ''}.json", results)
 
 if __name__ == "__main__":
     main()

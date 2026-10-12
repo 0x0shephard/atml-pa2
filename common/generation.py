@@ -71,6 +71,7 @@ def batch_generate(
 
     attn = torch.ones_like(seq, dtype=torch.long)
     attn[:, :prompt_width] = enc["attention_mask"]
+    attn[:, prompt_width:] = rmask.long()
     return {
         "sequences": seq,
         "attention_mask": attn,
@@ -88,6 +89,7 @@ def response_token_logprobs(model, sequences, attention_mask, prompt_width, resp
     outputs = model(
         input_ids=sequences,
         attention_mask=attention_mask,
+        position_ids=(attention_mask.long().cumsum(-1) - 1).clamp_min(0),
         use_cache=False,
         return_dict=True,
     )
@@ -102,6 +104,7 @@ def response_sequence_logprobs(model, batch: dict):
     outputs = model(
         input_ids=batch["input_ids"],
         attention_mask=batch["attention_mask"],
+        position_ids=(batch["attention_mask"].long().cumsum(-1) - 1).clamp_min(0),
         use_cache=False,
         return_dict=True,
     )

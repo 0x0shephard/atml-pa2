@@ -37,12 +37,23 @@ class PairwiseAIJudge:
     """Fixed course judge with deterministic A/B orientation balancing and persistent caching."""
 
     def __init__(self, cfg: dict, cache_path: str | Path):
+        from common.runtime import atomic_json
         self.cfg = cfg
         self.cache_path = repo_path(cache_path)
         if self.cache_path.exists():
             self.cache = json.loads(self.cache_path.read_text(encoding="utf-8"))
         else:
             self.cache = {}
+
+        self.audit_path = self.cache_path.with_suffix(".audit.json")
+        self.audit = json.loads(self.audit_path.read_text()) if self.audit_path.exists() else {}
+        from common.runtime import fingerprint
+        self.meta_path = self.cache_path.with_suffix(".meta.json")
+        provenance = {"model": cfg["ai_judge_model"], "rubric": PAIRWISE_RUBRIC,
+                      "quantized": cfg.get("quantize_frozen_models", True), "max_new_tokens": 4}
+        if self.meta_path.exists() and json.loads(self.meta_path.read_text())["fingerprint"] != fingerprint(provenance):
+            raise ValueError("Pairwise judge cache configuration changed")
+        atomic_json(self.meta_path, {"fingerprint": fingerprint(provenance), "provenance": provenance})
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             cfg["ai_judge_model"], padding_side="left", use_fast=True
@@ -100,7 +111,10 @@ class PairwiseAIJudge:
 
         self.cache[key] = result
         self.cache_path.parent.mkdir(parents=True, exist_ok=True)
-        self.cache_path.write_text(json.dumps(self.cache, indent=2), encoding="utf-8")
+        from common.runtime import atomic_json
+        self.audit[key] = {"raw_output": decoded, "ambiguous": m is None, "swapped": swap, "result": result}
+        atomic_json(self.cache_path, self.cache)
+        atomic_json(self.audit_path, self.audit)
         return result
 
     def group_rewards(self, problem: str, responses: list[str]):

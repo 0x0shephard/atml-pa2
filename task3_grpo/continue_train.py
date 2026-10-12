@@ -32,20 +32,14 @@ def prepare_grpo_continuation(config_path: str):
     }
 
 
-def run_grpo(config_path: str, output: str | None = None, updates: int | None = None, loss_type: str = "grpo", run_name: str = "standard"):
+def run_grpo(config_path: str, output: str | None = None, updates: int | None = None, loss_type: str = "grpo", run_name: str = "standard", resume: bool = False):
     bundle = prepare_grpo_continuation(config_path)
     cfg = bundle["cfg"]
     if updates is not None:
         cfg["updates"] = int(updates)
-    out = repo_path(output or cfg["output"])
-    out.parent.mkdir(parents=True, exist_ok=True)
-
-    raise NotImplementedError(
-        "TODO(student): implement the GRPO rollout/update loop from the supplied midpoint. Generate K completions per prompt, "
-        "mask max-length completions when configured, compute within-prompt relative advantages, apply the clipped objective, "
-        "log reward/KL/group reward std/uninformative-group fraction/entropy/length/gradient norm, and save the adapter. "
-        "Validate task3_grpo.grpo before running experiments."
-    )
+    from common.online import run_online
+    out = repo_path(output or f"outputs/task3_grpo/{run_name}")
+    return run_online(bundle, out, run_name, "grpo", resume, loss_type)
 
 
 def main():
@@ -55,8 +49,9 @@ def main():
     ap.add_argument("--updates", type=int)
     ap.add_argument("--loss-type", choices=["grpo", "dr_grpo"], default="grpo")
     ap.add_argument("--run-name", default="standard")
+    ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
-    run_grpo(args.config, args.output, args.updates, args.loss_type, args.run_name)
+    run_grpo(args.config, args.output, args.updates, args.loss_type, args.run_name, args.resume)
 
 
 if __name__ == "__main__":

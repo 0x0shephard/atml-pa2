@@ -1,0 +1,768 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "id": "benchmark_dpo",
+      "account": "A",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "scripts.benchmark",
+          "--task",
+          "dpo"
+        ]
+      ],
+      "artifacts": [
+        "results/benchmarks/dpo.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "dpo_standard",
+      "account": "A",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task1_dpo.train",
+          "--resume"
+        ],
+        [
+          "-m",
+          "task1_dpo.evaluate",
+          "--adapter",
+          "outputs/task1_dpo/standard"
+        ]
+      ],
+      "artifacts": [
+        "outputs/task1_dpo/standard/run.json",
+        "results/task1_dpo/standard_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "benchmark_ppo",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "scripts.benchmark",
+          "--task",
+          "ppo"
+        ]
+      ],
+      "artifacts": [
+        "results/benchmarks/ppo.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "ppo_standard",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task2_ppo.continue_train",
+          "--resume"
+        ],
+        [
+          "-m",
+          "task2_ppo.evaluate",
+          "--adapter",
+          "outputs/task2_ppo/standard"
+        ]
+      ],
+      "artifacts": [
+        "outputs/task2_ppo/standard/run.json",
+        "results/task2_ppo/standard_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "benchmark_grpo",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "scripts.benchmark",
+          "--task",
+          "grpo"
+        ]
+      ],
+      "artifacts": [
+        "results/benchmarks/grpo.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "grpo_standard",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task3_grpo.continue_train",
+          "--resume"
+        ],
+        [
+          "-m",
+          "task3_grpo.evaluate",
+          "--adapter",
+          "outputs/task3_grpo/standard"
+        ]
+      ],
+      "artifacts": [
+        "outputs/task3_grpo/standard/run.json",
+        "results/task3_grpo/standard_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "dpo_beta_003",
+      "account": "A",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task1_dpo.ablate_beta",
+          "--beta",
+          "0.03",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task1_dpo/beta_0.03_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "dpo_beta_010",
+      "account": "A",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task1_dpo.ablate_beta",
+          "--beta",
+          "0.10",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task1_dpo/beta_0.10_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "dpo_beta_030",
+      "account": "A",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task1_dpo.ablate_beta",
+          "--beta",
+          "0.30",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task1_dpo/beta_0.30_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "dpo_length",
+      "account": "A",
+      "depends_on": [
+        "dpo_standard"
+      ],
+      "dependency_artifacts": [
+        "outputs/task1_dpo/standard"
+      ],
+      "commands": [
+        [
+          "-m",
+          "task1_dpo.analyze_length",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task1_dpo/length_summary.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "ppo_cached_clipping",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task2_ppo.analyze_clipping",
+          "--cached-only"
+        ]
+      ],
+      "artifacts": [
+        "results/task2_ppo/cached_clipping.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "ppo_clip_005",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task2_ppo.analyze_clipping",
+          "--forks-only",
+          "--epsilon",
+          "0.05",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task2_ppo/clip_0.05_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "ppo_clip_020",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task2_ppo.analyze_clipping",
+          "--forks-only",
+          "--epsilon",
+          "0.20",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task2_ppo/clip_0.20_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "ppo_clip_050",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task2_ppo.analyze_clipping",
+          "--forks-only",
+          "--epsilon",
+          "0.50",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task2_ppo/clip_0.50_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "ppo_kl_000",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task2_ppo.ablate_kl",
+          "--beta",
+          "0.00",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task2_ppo/kl_0.00_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "ppo_kl_010",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task2_ppo.ablate_kl",
+          "--beta",
+          "0.10",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task2_ppo/kl_0.10_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "ppo_kl_020",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task2_ppo.ablate_kl",
+          "--beta",
+          "0.20",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task2_ppo/kl_0.20_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "grpo_groups",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task3_grpo.analyze_group_size"
+        ]
+      ],
+      "artifacts": [
+        "results/task3_grpo/group_size_summary.json"
+      ],
+      "gpu": false
+    },
+    {
+      "id": "grpo_normalization_grpo",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task3_grpo.compare_normalization",
+          "--loss-type",
+          "grpo",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task3_grpo/normalization_grpo_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "grpo_normalization_dr_grpo",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task3_grpo.compare_normalization",
+          "--loss-type",
+          "dr_grpo",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/task3_grpo/normalization_dr_grpo_metrics.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "safety_sft",
+      "account": "A",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task4_safety.generate_responses",
+          "--policy",
+          "sft"
+        ],
+        [
+          "-m",
+          "task4_safety.judge_responses",
+          "--policy",
+          "sft"
+        ]
+      ],
+      "artifacts": [
+        "results/task4_safety/judged_sft.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "safety_dpo",
+      "account": "A",
+      "depends_on": [
+        "dpo_standard"
+      ],
+      "dependency_artifacts": [
+        "outputs/task1_dpo/standard"
+      ],
+      "commands": [
+        [
+          "-m",
+          "task4_safety.generate_responses",
+          "--policy",
+          "dpo"
+        ],
+        [
+          "-m",
+          "task4_safety.judge_responses",
+          "--policy",
+          "dpo"
+        ]
+      ],
+      "artifacts": [
+        "results/task4_safety/judged_dpo.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "safety_ppo",
+      "account": "A",
+      "depends_on": [
+        "ppo_standard"
+      ],
+      "dependency_artifacts": [
+        "outputs/task2_ppo/standard"
+      ],
+      "commands": [
+        [
+          "-m",
+          "task4_safety.generate_responses",
+          "--policy",
+          "ppo"
+        ],
+        [
+          "-m",
+          "task4_safety.judge_responses",
+          "--policy",
+          "ppo"
+        ]
+      ],
+      "artifacts": [
+        "results/task4_safety/judged_ppo.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "safety_grpo",
+      "account": "A",
+      "depends_on": [
+        "grpo_standard"
+      ],
+      "dependency_artifacts": [
+        "outputs/task3_grpo/standard"
+      ],
+      "commands": [
+        [
+          "-m",
+          "task4_safety.generate_responses",
+          "--policy",
+          "grpo"
+        ],
+        [
+          "-m",
+          "task4_safety.judge_responses",
+          "--policy",
+          "grpo"
+        ]
+      ],
+      "artifacts": [
+        "results/task4_safety/judged_grpo.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "safety_aggregate",
+      "account": "A",
+      "depends_on": [
+        "safety_sft",
+        "safety_dpo",
+        "safety_ppo",
+        "safety_grpo"
+      ],
+      "dependency_artifacts": [
+        "results/task4_safety/generated_sft.jsonl",
+        "results/task4_safety/judged_sft.jsonl",
+        "results/task4_safety/generated_dpo.jsonl",
+        "results/task4_safety/judged_dpo.jsonl",
+        "results/task4_safety/generated_ppo.jsonl",
+        "results/task4_safety/judged_ppo.jsonl",
+        "results/task4_safety/generated_grpo.jsonl",
+        "results/task4_safety/judged_grpo.jsonl"
+      ],
+      "commands": [
+        [
+          "-m",
+          "task4_safety.make_audit_sheet"
+        ],
+        [
+          "-m",
+          "task4_safety.evaluate_safety"
+        ]
+      ],
+      "artifacts": [
+        "results/task4_safety/safety_summary.json",
+        "results/task4_safety/manual_audit.csv"
+      ],
+      "gpu": false
+    },
+    {
+      "id": "math_gsm_sft",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.evaluate_math",
+          "--dataset",
+          "gsm",
+          "--policy",
+          "sft",
+          "--phase",
+          "generate"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/gsm_sft_generated.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_gsm_rlvr",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.evaluate_math",
+          "--dataset",
+          "gsm",
+          "--policy",
+          "rlvr",
+          "--phase",
+          "generate"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/gsm_rlvr_generated.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_gsm_rlaif",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.evaluate_math",
+          "--dataset",
+          "gsm",
+          "--policy",
+          "rlaif",
+          "--phase",
+          "generate"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/gsm_rlaif_generated.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_gsm_judge",
+      "account": "B",
+      "depends_on": [
+        "math_gsm_sft",
+        "math_gsm_rlvr",
+        "math_gsm_rlaif"
+      ],
+      "dependency_artifacts": [
+        "results/task5_feedback/gsm_sft_generated.jsonl",
+        "results/task5_feedback/gsm_rlvr_generated.jsonl",
+        "results/task5_feedback/gsm_rlaif_generated.jsonl"
+      ],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.evaluate_math",
+          "--dataset",
+          "gsm",
+          "--phase",
+          "judge"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/gsm_summary.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_transfer_sft",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.evaluate_math",
+          "--dataset",
+          "transfer",
+          "--policy",
+          "sft",
+          "--phase",
+          "generate"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/transfer_sft_generated.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_transfer_rlvr",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.evaluate_math",
+          "--dataset",
+          "transfer",
+          "--policy",
+          "rlvr",
+          "--phase",
+          "generate"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/transfer_rlvr_generated.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_transfer_rlaif",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.evaluate_math",
+          "--dataset",
+          "transfer",
+          "--policy",
+          "rlaif",
+          "--phase",
+          "generate"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/transfer_rlaif_generated.jsonl"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_transfer_judge",
+      "account": "B",
+      "depends_on": [
+        "math_transfer_sft",
+        "math_transfer_rlvr",
+        "math_transfer_rlaif"
+      ],
+      "dependency_artifacts": [
+        "results/task5_feedback/transfer_sft_generated.jsonl",
+        "results/task5_feedback/transfer_rlvr_generated.jsonl",
+        "results/task5_feedback/transfer_rlaif_generated.jsonl"
+      ],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.evaluate_math",
+          "--dataset",
+          "transfer",
+          "--phase",
+          "judge"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/transfer_summary.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_diagnostics",
+      "account": "B",
+      "depends_on": [],
+      "dependency_artifacts": [],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.score_perturbations"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/diagnostics_summary.json"
+      ],
+      "gpu": true
+    },
+    {
+      "id": "math_aggregate",
+      "account": "B",
+      "depends_on": [
+        "math_gsm_judge",
+        "math_transfer_judge",
+        "math_diagnostics"
+      ],
+      "dependency_artifacts": [
+        "results/task5_feedback/gsm_summary.json",
+        "results/task5_feedback/transfer_summary.json",
+        "results/task5_feedback/diagnostics_summary.json"
+      ],
+      "commands": [
+        [
+          "-m",
+          "task5_feedback.compare_feedback"
+        ]
+      ],
+      "artifacts": [
+        "results/task5_feedback/feedback_comparison.json"
+      ],
+      "gpu": false
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "standard": {
+    "strata_preference_accuracy": {
+      "rejected_longer": {
+        "mean": 0.6582278481012658,
+        "std": 0.4743036454479796,
+        "count": 79
+      },
+      "preferred_longer": {
+        "mean": 0.47435897435897434,
+        "std": 0.4993421049782167,
+        "count": 78
+      },
+      "length_matched": {
+        "mean": 0.5625,
+        "std": 0.49607837082461076,
+        "count": 80
+      }
+    },
+    "word_limit_compliance": {
+      "mean": 0.5,
+      "std": 0.5,
+      "count": 10
+    },
+    "n": 10,
+    "response_length": {
+      "mean": 48.8,
+      "std": 20.45385049324454,
+      "count": 10
+    },
+    "truncated_fraction": 0.0,
+    "reward": {
+      "mean": 3.3099609375,
+      "std": 0.470915449065389,
+      "count": 10
+    },
+    "kl": 0.0019215172706324546,
+    "entropy": 0.9610721624044122,
+    "sample_entropy": 0.7460044446538706,
+    "kl_averaging": "mean over all valid generated response tokens"
+  },
+  "length_balanced": {
+    "strata_preference_accuracy": {
+      "rejected_longer": {
+        "mean": 0.7721518987341772,
+        "std": 0.4194440892602757,
+        "count": 79
+      },
+      "preferred_longer": {
+        "mean": 0.44871794871794873,
+        "std": 0.4973631984941236,
+        "count": 78
+      },
+      "length_matched": {
+        "mean": 0.625,
+        "std": 0.4841229182759271,
+        "count": 80
+      }
+    },
+    "word_limit_compliance": {
+      "mean": 0.5,
+      "std": 0.5,
+      "count": 10
+    },
+    "n": 10,
+    "response_length": {
+      "mean": 50.0,
+      "std": 22.97389823255949,
+      "count": 10
+    },
+    "truncated_fraction": 0.0,
+    "reward": {
+      "mean": 3.3708984375,
+      "std": 0.4270993163056686,
+      "count": 10
+    },
+    "kl": 0.005923859149217605,
+    "entropy": 0.9820242063999176,
+    "sample_entropy": 0.7957275848388672,
+    "kl_averaging": "mean over all valid generated response tokens"
+  }
+}

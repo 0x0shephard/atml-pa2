@@ -1,0 +1,9 @@
+{
+  "fingerprint": "7cb51b96669daae6c0abd4ddc92fcdefec361846e4fff1975a69ac9fff416e0e",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "rubric": "You are comparing two candidate solutions to the same math problem.\n\nEvaluate mathematical correctness, internal consistency, relevance, and whether the stated final answer follows from the reasoning.\nDo not prefer a response merely because it is longer, more confident, or more polished.\nIf neither response is meaningfully better, return TIE.\n\nReturn exactly one token: A, B, or TIE.\n\nProblem:\n{problem}\n\nCandidate A:\n{a}\n\nCandidate B:\n{b}\n\nPreference:",
+    "quantized": true,
+    "max_new_tokens": 4
+  }
+}
