@@ -218,6 +218,7 @@
   ],
   "submission_ready": false,
   "repository": "https://github.com/0x0shephard/atml-pa2",
+  "sample_report": "report/main.pdf (AI-assisted sample; human audit not performed)",
   "remaining": [
     "Student blind safety audit",
     "Student-written eight-page report",

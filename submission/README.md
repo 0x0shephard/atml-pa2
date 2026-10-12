@@ -2,6 +2,8 @@
 
 All 32 experiment jobs and three benchmarks completed. The ZIP contains Python source, release configurations, tests, result records, job receipts, numerical tables, and figures. It excludes credentials, raw downloaded datasets, and model weights. This is an evidence bundle, not a completed LMS submission.
 
+The user subsequently requested an ungraded sample report. `report/main.pdf` is that completed AI-assisted sample (eight main pages plus references), based on actual results and explicitly noting the unperformed human audit. The student-work steps below still apply if adapting the materials to the graded assignment.
+
 ## Student work
 
 1. Open `manual_audit.html` in a browser. Label all 240 responses yourself without viewing automated labels. Export `manual_audit.csv` and replace `results/task4_safety/manual_audit.csv` with that exported file. Preserve the IDs and response text.

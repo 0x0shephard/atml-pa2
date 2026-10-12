@@ -1,0 +1,30 @@
+{
+  "gsm": {
+    "rlvr": {
+      "better": 13,
+      "worse": 4,
+      "paired_exact_p": 0.049041748046875,
+      "truncated": 8
+    },
+    "rlaif": {
+      "better": 8,
+      "worse": 1,
+      "paired_exact_p": 0.0390625,
+      "truncated": 4
+    }
+  },
+  "transfer": {
+    "rlvr": {
+      "better": 0,
+      "worse": 3,
+      "paired_exact_p": 0.25,
+      "truncated": 0
+    },
+    "rlaif": {
+      "better": 0,
+      "worse": 3,
+      "paired_exact_p": 0.25,
+      "truncated": 0
+    }
+  }
+}

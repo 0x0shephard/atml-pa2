@@ -56,7 +56,15 @@ def main():
         for ax, metric in zip(axes.flat, metrics):
             values = [row[metric]["mean"] if isinstance(row[metric], dict) else row[metric] for row in rows]
             ax.plot([row["update"] for row in rows], values, marker=".")
-            ax.set(xlabel="Update", ylabel=metric.replace("_", " "))
+            label = {"response_length": "Mean response\nlength", "group_reward_std": "Within-group\nreward std",
+                     "uninformative_group_fraction": "Uninformative\ngroup fraction"}.get(metric, metric.replace("_", " "))
+            ax.set_xlabel("Update", fontsize=17)
+            ax.set_ylabel(label, fontsize=17)
+            ax.tick_params(labelsize=16)
+            from matplotlib.ticker import MaxNLocator
+            ax.yaxis.set_major_locator(MaxNLocator(nbins=3))
+            ax.xaxis.set_major_locator(MaxNLocator(nbins=4, integer=True))
+            ax.yaxis.get_offset_text().set_fontsize(16)
             ax.grid(alpha=.2)
         for ax in list(axes.flat)[len(metrics):]:
             ax.set_visible(False)

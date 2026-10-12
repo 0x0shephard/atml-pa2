@@ -20,6 +20,7 @@ def main():
                 "job_receipts": {}, "validation_issues": issues,
                 "submission_ready": False,
                 "repository": "https://github.com/0x0shephard/atml-pa2",
+                "sample_report": "report/main.pdf (AI-assisted sample; human audit not performed)",
                 "remaining": ["Student blind safety audit", "Student-written eight-page report",
                               "Final commit after audit and report", "LMS upload"]}
     for run in runs:
