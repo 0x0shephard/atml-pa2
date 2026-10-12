@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[preprint,nonatbib]{neurips_2026}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\newcommand{\studenttext}[1]{\par\smallskip\noindent\textcolor{gray}{\textit{[Student writing: #1]}}\par\smallskip}
+\newcommand{\evidencefigure}[2]{\begin{center}\includegraphics[width=\linewidth]{../results/figures/#1}\end{center}\studenttext{Write your own caption for #2.}}
+\title{[Student title]\\\small Formatting template -- not a completed submission}
+\author{Muhammad Jon Raza\\{}[Student ID and institution]}
+\begin{document}
+\maketitle
+\begin{abstract}
+\studenttext{Write your abstract in your own words.}
+\noindent Repository: \url{https://github.com/0x0shephard/atml-pa2}
+\end{abstract}
+\section{Introduction and research questions}
+\studenttext{Write your introduction and research questions.}
+\vfill
+\noindent\textcolor{gray}{Template only. The course requires student-written report language and analysis.}
+\clearpage
+\section{Experimental setup and methods}
+\studenttext{Describe the fixed datasets, policies, checkpoints, objectives, budgets, decoding, and evaluation procedures.}
+\input{tables/resources.tex}
+\studenttext{Write the resource-table caption and describe retained DPO sample counts, prompt-length filtering, and actual versus allocated token budgets.}
+\vfill
+\clearpage
+\section{Task 1: DPO}
+\input{tables/dpo.tex}
+\studenttext{Write the table caption and your analysis of the standard run and beta forks.}
+\evidencefigure{dpo_length.pdf}{the length-stratified comparison}
+\studenttext{Discuss length and word-limit evidence. Select and interpret qualitative examples from saved responses yourself.}
+\vfill
+\clearpage
+\section{Task 2: PPO}
+\evidencefigure{task2_ppo_trajectories.pdf}{the PPO continuation trajectories}
+\input{tables/ppo_cached.tex}
+\studenttext{Write the cache-table caption. Use the clipping/KL comparison tables and stability statistics for your analysis; choose brief qualitative examples yourself.}
+\vfill
+\clearpage
+\section{Task 3: GRPO}
+\evidencefigure{grpo_groups.pdf}{the equal-generation group-size study}
+\evidencefigure{grpo_length_gradients.pdf}{the length-conditioned score-gradient comparison}
+\studenttext{Write your interpretation of normalization, held-out behavior, and qualitative examples. Use the saved normalization table and resource measurements.}
+\vfill
+\clearpage
+\section{Task 4: Safety calibration}
+\evidencefigure{safety_rates.png}{the automated safety rates}
+\studenttext{Complete the blind audit first. Insert your manual agreement and confusion matrix after regeneration; then discuss safety calibration and judge limitations.}
+\studenttext{Select category-level evidence and brief examples from the saved records.}
+\vfill
+\clearpage
+\section{Task 5: Feedback sources}
+\input{tables/math.tex}
+\studenttext{Write the comparison-table caption and your in-domain versus transfer analysis.}
+\evidencefigure{feedback_diagnostics.png}{the controlled perturbation diagnostics}
+\studenttext{Discuss sensitivity statistics and qualitative disagreement examples in your own words.}
+\vfill
+\clearpage
+\section{Cross-task discussion}
+\studenttext{Write your synthesis using the manual's Task 6 research questions.}
+\section{Conclusion}
+\studenttext{Write your conclusion, limitations, and scope of the evidence.}
+\vfill
+\clearpage
+\section*{References}
+\studenttext{Insert the sources you actually read and cited. References do not count toward the course's eight-page main-content limit.}
+\end{document}

@@ -19,8 +19,9 @@ def main():
                 "benchmark_jobs": len([r for r in runs if r["id"].startswith("benchmark_")]),
                 "job_receipts": {}, "validation_issues": issues,
                 "submission_ready": False,
+                "repository": "https://github.com/0x0shephard/atml-pa2",
                 "remaining": ["Student blind safety audit", "Student-written eight-page report",
-                              "Accessible student GitHub repository and final commit", "LMS upload"]}
+                              "Final commit after audit and report", "LMS upload"]}
     for run in runs:
         path = ROOT / "results/jobs" / (run["id"] + ".json")
         receipt = json.loads(path.read_text())
@@ -42,6 +43,9 @@ def main():
     files[".gitignore"] = (ROOT / ".gitignore").read_bytes()
     for name in ("submission/README.md", "submission/manual_audit.html", "manual/README.md"):
         files[name] = (ROOT / name).read_bytes()
+    for path in (ROOT / "report").rglob("*"):
+        if path.is_file() and path.suffix in {".tex", ".sty", ".md", ".pdf"}:
+            files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     files["submission/status.json"] = (destination / "status.json").read_bytes()
     hashes = {name: hashlib.sha256(data).hexdigest() for name,data in files.items()}
     (destination / "file_manifest.json").write_text(json.dumps(hashes, indent=2))

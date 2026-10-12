@@ -37,3 +37,9 @@ kaggle_downloads/
 *.credentials.json
 credentials.json
 kaggle.json
+
+# LaTeX intermediate files
+report/*.log
+report/*.aux
+report/*.out
+report/*.synctex.gz

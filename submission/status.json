@@ -217,10 +217,11 @@
     "Task 4: manual audit is pending or incomplete"
   ],
   "submission_ready": false,
+  "repository": "https://github.com/0x0shephard/atml-pa2",
   "remaining": [
     "Student blind safety audit",
     "Student-written eight-page report",
-    "Accessible student GitHub repository and final commit",
+    "Final commit after audit and report",
     "LMS upload"
   ],
   "manual_audit": {

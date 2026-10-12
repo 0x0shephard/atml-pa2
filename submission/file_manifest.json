@@ -1,5 +1,5 @@
 {
-  "README.md": "0c3ea42fee396824ca76a3ea2c90b2f2b884ef5b11c993ee677c8e2b7802863b",
+  "README.md": "6d9662bacf0d63993e8b16487bc0866ecd6348ff206c98f00f47556504c5e567",
   "common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "common/data.py": "267f0d48c587bb70913b93dc3667ddcfeb2f2ec4aedb5bc21f5ffeff9aef7fbc",
   "common/evaluation.py": "774d9a5819f25d7648246b302f5dd6a5e7550402e8029c0a7c2e91393cefe8a6",
@@ -28,8 +28,9 @@
   "scripts/kaggle_autopilot.py": "ce9926d7373d5e23ec65cc5186f4283b5ff6c6f21dc7a996292a1b397697d9a6",
   "scripts/kaggle_profile_cli.py": "08c33b72ebaa109cd42546df3cfdf77bb592bb9f0de0d1f551b23e638e55e85b",
   "scripts/kaggle_runner.py": "509119cf3480275f22401d86f65d00d0fc4aee45a7bc6e833093f0ec0fbf4b74",
-  "scripts/package_submission.py": "6a777145747bdc9b5c473d276f2335c027d204f9a8f4c294fd0ce6f7fc4fcf5a",
+  "scripts/package_submission.py": "7598289a76cbfe1b4ddc2bd596dfa70a8142ac2f9f7ca1688a12d77136b41990",
   "scripts/prepare_transfer_eval.py": "b1c19a59e6dc0672336a306a23fc349e57a10400072b1716e9439d30ff9a0720",
+  "scripts/report_tables.py": "41a4b4b9a429f35a08603a330d0cb53278719d04192c390ed094424682d09527",
   "scripts/submission_evidence.py": "77ffdb71639adf35a280f4397c5ac4b8e72980128d59bb51cc9824f51d47fc17",
   "scripts/validate_assets.py": "c4f5ab10681fbf64bde0b3d1166492f3dd9967cee027634a26696b74bbb12e02",
   "scripts/validate_results.py": "15a86c25187b2eda291f8384ca406908cfa074d88067a004365322d78f035cb0",
@@ -319,9 +320,17 @@
   "results/task5_feedback/transfer_summary.json": "4fc01dbc98d6dd4ca19b23152ce7667dbc6835785230d6981342de3265755e8a",
   "results/validation/evidence_integrity.json": "90fe4a12ee9afe5f079f7ccdf74c44a71399b8d8188cee75bf4ced97af123861",
   "results/validation/local_tests.json": "1552183fb1bbc02409a8b00930d9d0849b16557beace8c21b9a9ff97fd78f0ca",
-  ".gitignore": "393bba0eb6d68d0c4fc7f44e70c8c68ef49b238edc5145df3dc27f61dd647dd1",
+  ".gitignore": "7fd696d6484fb4b6b94871260a6c90e844c270020476e8e7751f9b39dfc8b537",
   "submission/README.md": "2c0aff5ec79b9c16a253c8b2eb3d5be5cccad8f00809e17282720177f6acfdc9",
   "submission/manual_audit.html": "9352c7a057926837209905a63e510ff4f8d8c61dacca27ff943946c5d9bedce3",
   "manual/README.md": "c08d8dc3edb6521936241ce984a00727ae3886549f64625bd1611ec23e6e3c30",
-  "submission/status.json": "1eae519bf8b065a45ccdf5d4113c8b8e27d4ad3a227b97f5eb9a58d2b6b13016"
+  "report/main.pdf": "dea7be10ae6a7c9cca41f6b35bcf256a3bafb6dcac8acc07e0c8b9506cda0bc1",
+  "report/main.tex": "1d72c8846e2fd6d2ae60798012c603ed24564ce079fa528724e79d6f16d77850",
+  "report/README.md": "8b19d15fdff125b8bf16784798bcfe01e266e2e5ab8e274944ecddd193e41285",
+  "report/neurips_2026.sty": "c3fc2894e83d2517ca18b66741d6c595986d97957dc08ec08bb2125a7ec4555a",
+  "report/tables/ppo_cached.tex": "b1f2453ec2d65b8242263f9f4b4ebe86923202318813bf996cea0c0767257457",
+  "report/tables/resources.tex": "8da80151dbb626c595be3ef7590df76c7b3c2ba23d8d21b320d6ba0b25bfe421",
+  "report/tables/dpo.tex": "311a9cc161c542990f8dfab21f5f75278129dfef2e9ad4d2c5264202d7e20ac6",
+  "report/tables/math.tex": "82efd42f487ec5426fce994811a81c611397e93a6665d171a25b04d9fcc1c80c",
+  "submission/status.json": "36761fc760e05c22ecf7a33c10cd3c457634b6927721aa4a5c83740a8b652a58"
 }
